@@ -1,0 +1,110 @@
+{% extends 'queueapp/base.html' %}
+
+{% block content %}
+<style>
+    .container {
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .header h1 {
+        color: #1a73e8;
+        font-size: 24px;
+    }
+    .logout-btn {
+        text-decoration: none;
+        background: #e53935;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 5px;
+    }
+    .logout-btn:hover {
+        background: #c62828;
+    }
+    .business-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    .business-card {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        border-left: 5px solid #1a73e8;
+    }
+    .business-card h2 {
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+    }
+    .business-card p {
+        font-size: 14px;
+        color: #555;
+    }
+    .view-link {
+        display: block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #1a73e8;
+        font-weight: bold;
+    }
+    .view-link:hover {
+        text-decoration: underline;
+    }
+    .empty-state {
+        text-align: center;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .register-btn {
+        display: inline-block;
+        text-decoration: none;
+        background: #34a853;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    .register-btn:hover {
+        background: #2c8c45;
+    }
+</style>
+
+<div class="container">
+    <div class="header">
+        <h1>Business Dashboard</h1>
+        <a href="{% url 'account_logout' %}" class="logout-btn">Logout</a>
+    </div>
+
+    {% if businesses %}
+        <div class="business-grid">
+            {% for business in businesses %}
+                <div class="business-card">
+                    <h2>{{ business.name }}</h2>
+                    <p>{{ business.description }}</p>
+                    <a href="{% url 'business_detail' business.id %}" class="view-link">
+                        View Queues →
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <p>No businesses registered yet.</p>
+            <a href="{% url 'register_business' %}" class="register-btn">Register Your Business</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

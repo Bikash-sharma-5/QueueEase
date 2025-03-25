@@ -1,0 +1,10 @@
+{% extends 'queueapp/base.html' %}
+{% block content %}
+<h1>Queue: {{ queue.name }}</h1>
+<h2>Participants</h2>
+<ul>
+    {% for participant in participants %}
+        <li>{{ participant.position }} - {{ participant.name }} ({{ participant.phone }})</li>
+    {% endfor %}
+</ul>
+{% endblock %}

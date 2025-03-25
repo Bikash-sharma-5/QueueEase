@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueueEase - Smart Queue Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background: #007bff;
+            padding: 15px 20px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .hero {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #007bff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            margin: 15px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .feature-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            margin: 15px;
+            text-align: center;
+        }
+        .footer {
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        QueueEase - Smart Queue Management
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Welcome to QueueEase</h1>
+            <p>Say goodbye to long waiting lines! Join queues online, receive real-time updates, and save time effortlessly.</p>
+            <a href="{% url 'register' %}" class="btn">Get Started</a>
+            <a href="{% url 'login' %}" class="btn">Login</a>
+        </div>
+
+        <div class="features">
+            <div class="feature-box">
+                <h3>📱 Easy to Use</h3>
+                <p>Scan a QR code and join a queue instantly.</p>
+            </div>
+            <div class="feature-box">
+                <h3>🔔 Real-Time Updates</h3>
+                <p>Receive SMS & email notifications about your queue position.</p>
+            </div>
+            <div class="feature-box">
+                <h3>⚡ Fast & Efficient</h3>
+                <p>Stay informed and reduce waiting times with smart queue tracking.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2025 QueueEase. All Rights Reserved.
+    </div>
+
+</body>
+</html>
